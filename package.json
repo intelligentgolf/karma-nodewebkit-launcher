@@ -29,5 +29,6 @@
     "grunt": "~0.4.1",
     "grunt-bump": "0.0.7",
     "grunt-auto-release": "0.0.2"
-  }
+  },
+  "contributors": []
 }
