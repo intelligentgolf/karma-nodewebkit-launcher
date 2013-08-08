@@ -24,7 +24,8 @@ SafariBrowser.prototype = {
   name: 'Safari',
 
   DEFAULT_CMD: {
-    darwin: '/Applications/Safari.app/Contents/MacOS/Safari'
+    darwin: '/Applications/Safari.app/Contents/MacOS/Safari',
+    win32: process.env['ProgramFiles(x86)'] + '\\Safari\\Safari.exe'
   },
   ENV_CMD: 'SAFARI_BIN'
 };
