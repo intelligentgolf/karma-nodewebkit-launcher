@@ -20,9 +20,6 @@
   "peerDependencies": {
     "karma": ">=0.9"
   },
-  "os": [
-    "darwin"
-  ],
   "license": "MIT",
   "devDependencies": {
     "grunt-npm": "0.0.2",
