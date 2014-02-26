@@ -1,42 +1,41 @@
-# karma-safari-launcher
+# karma-nodewebkit-launcher
 
-> Launcher for Safari.
+> Launcher for node-webkit. 
+
+---
+
+> This is a small but experimental launcher, based on the [Safari Launcher](https://github.com/karma-runner/karma-safari-launcher) by Vojta Jina and contributors, and not affiliated with any official or semi-official Karma plugins.
+
+---
+
 
 ## Installation
 
-The easiest way is to keep `karma-safari-launcher` as a devDependency in your `package.json`.
+The easiest way is to keep `karma-nodewebkit-launcher` as a devDependency in your `package.json`.
+
 ```json
 {
   "devDependencies": {
     "karma": "~0.10",
-    "karma-safari-launcher": "~0.1"
+    "karma-safari-launcher": "https://github.com/intelligentgolf/karma-nodewebkit-launcher"
   }
 }
 ```
 
-You can simple do it by:
-```bash
-npm install karma-safari-launcher --save-dev
-```
+At the moment, this plugin is not registered with npm
 
 ## Configuration
+
 ```js
 // karma.conf.js
 module.exports = function(config) {
   config.set({
-    browsers: ['Safari']
+    browsers: ['NodeWebkit']
   });
 };
 ```
 
 You can pass list of browsers as a CLI argument too:
 ```bash
-karma start --browsers Safari
+karma start --browsers NodeWebkit
 ```
-
-----
-
-For more information on Karma see the [homepage].
-
-
-[homepage]: http://karma-runner.github.com
