@@ -1,39 +1,43 @@
 var fs = require('fs');
 var path = require('path');
+var ncp = require('ncp').ncp;
 
-
-var SafariBrowser = function(baseBrowserDecorator) {
+var NodeWebkitBrowser = function(baseBrowserDecorator) {
   baseBrowserDecorator(this);
 
   this._start = function(url) {
-    var HTML_TPL = path.normalize(__dirname + '/safari.html');
     var self = this;
+    var SOURCE_PATH = path.normalize(__dirname + '/runner.nw');
+    var STATIC_PATH = path.normalize(self._tempDir + '/runner.nw');
+    var INDEX_HTML = '/index.html';
+    
+    ncp(SOURCE_PATH, STATIC_PATH, function(err) {
+      fs.readFile(STATIC_PATH + INDEX_HTML, function(err, data) {
+        var content = data.toString().replace('%URL%', url);
 
-    fs.readFile(HTML_TPL, function(err, data) {
-      var content = data.toString().replace('%URL%', url);
-      var staticHtmlPath = self._tempDir + '/redirect.html';
-
-      fs.writeFile(staticHtmlPath, content, function(err) {
-        self._execCommand(self._getCommand(), [staticHtmlPath]);
+        fs.writeFile(STATIC_PATH + INDEX_HTML, content, function(err) {
+          self._execCommand(self._getCommand(), [STATIC_PATH]);
+        });
       });
     });
   };
 };
 
-SafariBrowser.prototype = {
-  name: 'Safari',
+NodeWebkitBrowser.prototype = {
+  name: 'node-webkit',
 
   DEFAULT_CMD: {
-    darwin: '/Applications/Safari.app/Contents/MacOS/Safari',
-    win32: process.env['ProgramFiles(x86)'] + '\\Safari\\Safari.exe'
+    linux: path.normalize(__dirname + '/../.bin/nodewebkit'),
+    darwin: path.normalize(__dirname + '/../.bin/nodewebkit'),
+    win32: path.normalize(__dirname + '/../.bin/nodewebkit.exe')
   },
-  ENV_CMD: 'SAFARI_BIN'
+
+  ENV_CMD: 'NODEWEBKIT_BIN'
 };
 
-SafariBrowser.$inject = ['baseBrowserDecorator'];
-
+NodeWebkitBrowser.$inject = ['baseBrowserDecorator'];
 
 // PUBLISH DI MODULE
 module.exports = {
-  'launcher:Safari': ['type', SafariBrowser]
+  'launcher:NodeWebkit': ['type', NodeWebkitBrowser]
 };
