@@ -28,7 +28,8 @@
     "grunt-npm": "0.0.2",
     "grunt": "~0.4.1",
     "grunt-bump": "0.0.7",
-    "grunt-auto-release": "0.0.2"
+    "grunt-auto-release": "0.0.2",
+    "nodewebkit": "^0.8.5"
   },
   "contributors": [
     {
@@ -41,7 +42,7 @@
     },
     {
       "name": "Michal Charemza",
-      "email": "michalcharemza@gmail.com" 
+      "email": "michalcharemza@gmail.com"
     }
   ]
 }
