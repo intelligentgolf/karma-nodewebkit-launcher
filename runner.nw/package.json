@@ -1,0 +1,6 @@
+{
+  "name": "karma-runner",
+  "main": "index.html",
+  "window": {
+  }
+}

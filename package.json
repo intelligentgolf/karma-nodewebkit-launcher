@@ -1,21 +1,24 @@
 {
-  "name": "karma-safari-launcher",
-  "version": "0.1.1",
-  "description": "A Karma plugin. Launcher for Safari.",
+  "name": "karma-nodewebkit-launcher",
+  "version": "0.0.1",
+  "description": "A Karma plugin. Launcher for node-webkit.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/karma-runner/karma-safari-launcher.git"
+    "url": "git://github.com/intelligentgolf/karma-nodewebkit-launcher.git"
   },
   "keywords": [
     "karma-plugin",
     "karma-launcher",
-    "safari"
+    "node-webkit"
   ],
-  "author": "Vojta Jina <vojta.jina@gmail.com>",
+  "author": {
+    "name": "Vojta Jina",
+    "email": "vojta.jina@gmail.com"
+  },
   "dependencies": {},
   "peerDependencies": {
     "karma": ">=0.9"
@@ -25,10 +28,21 @@
     "grunt-npm": "0.0.2",
     "grunt": "~0.4.1",
     "grunt-bump": "0.0.7",
-    "grunt-auto-release": "0.0.2"
+    "grunt-auto-release": "0.0.2",
+    "nodewebkit": "^0.8.5"
   },
   "contributors": [
-    "Andreas Krummsdorf <a.krummsdorf@litixsoft.de>",
-    "Friedel Ziegelmayer <dignifiedquire@gmail.com>"
+    {
+      "name": "Andreas Krummsdorf",
+      "email": "a.krummsdorf@litixsoft.de"
+    },
+    {
+      "name": "Friedel Ziegelmayer",
+      "email": "dignifiedquire@gmail.com"
+    },
+    {
+      "name": "Michal Charemza",
+      "email": "michalcharemza@gmail.com"
+    }
   ]
 }
