@@ -13,34 +13,32 @@ This is a small but experimental launcher, based on the [Safari Launcher](https:
 
 The easiest way is to keep `karma-nodewebkit-launcher` as a devDependency in your `package.json`.
 
-```json
-{
-  "devDependencies": {
-    "karma": "~0.10",
-    "karma-safari-launcher": "git://github.com/intelligentgolf/karma-nodewebkit-launcher.git"
-  }
-}
-```
+
+    {
+      "devDependencies": {
+        "karma": "~0.10",
+        "karma-safari-launcher": "git://github.com/intelligentgolf/karma-nodewebkit-launcher.git"
+      }
+    }
+
 
 You can do it on the command line by:
 
-```bash
-npm install git://github.com/intelligentgolf/karma-nodewebkit-launcher.gi --save-dev
+    npm install git://github.com/intelligentgolf/karma-nodewebkit-launcher.gi --save-dev
 
 At the moment, this plugin is not registered with npm, so you use the GitHub URL.
 
 ## Configuration
 
-```js
-// karma.conf.js
-module.exports = function(config) {
-  config.set({
-    browsers: ['NodeWebkit']
-  });
-};
-```
+    // karma.conf.js
+    module.exports = function(config) {
+      config.set({
+        browsers: ['NodeWebkit']
+      });
+    };
+
 
 You can pass list of browsers as a CLI argument too:
-```bash
-karma start --browsers NodeWebkit
-```
+
+    karma start --browsers NodeWebkit
+
