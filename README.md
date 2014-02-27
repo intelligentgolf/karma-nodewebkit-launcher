@@ -4,7 +4,7 @@
 
 ---
 
-> This is a small but experimental launcher, based on the [Safari Launcher](https://github.com/karma-runner/karma-safari-launcher) by Vojta Jina and contributors, and not affiliated with any official or semi-official Karma plugins.
+This is a small but experimental launcher, based on the [Safari Launcher](https://github.com/karma-runner/karma-safari-launcher) by Vojta Jina and contributors, and not affiliated with any official or semi-official Karma plugins.
 
 ---
 
@@ -17,12 +17,17 @@ The easiest way is to keep `karma-nodewebkit-launcher` as a devDependency in you
 {
   "devDependencies": {
     "karma": "~0.10",
-    "karma-safari-launcher": "https://github.com/intelligentgolf/karma-nodewebkit-launcher"
+    "karma-safari-launcher": "git://github.com/intelligentgolf/karma-nodewebkit-launcher.git"
   }
 }
 ```
 
-At the moment, this plugin is not registered with npm
+You can do it on the command line by:
+
+```bash
+npm install git://github.com/intelligentgolf/karma-nodewebkit-launcher.gi --save-dev
+
+At the moment, this plugin is not registered with npm, so you use the GitHub URL.
 
 ## Configuration
 
