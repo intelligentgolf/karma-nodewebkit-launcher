@@ -26,7 +26,7 @@ You can do it on the command line by:
 
     npm install git://github.com/intelligentgolf/karma-nodewebkit-launcher.git --save-dev
 
-At the moment, this plugin is not registered with npm, so you use the GitHub URL.
+At the moment, this plugin is not registered with npm, so you must use the GitHub URL.
 
 ## Configuration
 
