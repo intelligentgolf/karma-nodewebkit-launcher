@@ -24,7 +24,7 @@ The easiest way is to keep `karma-nodewebkit-launcher` as a devDependency in you
 
 You can do it on the command line by:
 
-    npm install git://github.com/intelligentgolf/karma-nodewebkit-launcher.gi --save-dev
+    npm install git://github.com/intelligentgolf/karma-nodewebkit-launcher.git --save-dev
 
 At the moment, this plugin is not registered with npm, so you use the GitHub URL.
 
