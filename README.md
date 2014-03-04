@@ -17,7 +17,7 @@ The easiest way is to keep `karma-nodewebkit-launcher` as a devDependency in you
     {
       "devDependencies": {
         "karma": "~0.10",
-        "karma-safari-launcher": "git://github.com/intelligentgolf/karma-nodewebkit-launcher.git"
+        "karma-nodewebkit-launcher": "git://github.com/intelligentgolf/karma-nodewebkit-launcher.git"
       }
     }
 
