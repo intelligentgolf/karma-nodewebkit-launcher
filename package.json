@@ -19,7 +19,9 @@
     "name": "Vojta Jina",
     "email": "vojta.jina@gmail.com"
   },
-  "dependencies": {},
+  "dependencies": {
+    "ncp": "~0.5.0"
+  },
   "peerDependencies": {
     "karma": ">=0.9"
   },
