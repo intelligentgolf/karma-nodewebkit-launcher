@@ -31,7 +31,9 @@
     "grunt": "~0.4.1",
     "grunt-bump": "0.0.7",
     "grunt-auto-release": "0.0.2",
-    "nodewebkit": "^0.8.5"
+    "nodewebkit": "^0.8.5",
+    "async": "~0.2.10",
+    "merge": "~1.1.2"
   },
   "contributors": [
     {
