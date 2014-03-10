@@ -41,4 +41,42 @@ At the moment, this plugin is not registered with npm, so you must use the GitHu
 You can pass list of browsers as a CLI argument too:
 
     karma start --browsers NodeWebkit
+    
+## Custom node-webkit manifest
+
+The default node-webkit [`package.json`](https://github.com/rogerwang/node-webkit/wiki/Manifest-format) that is used in the launcher is
+
+    {
+      "name": "karma-runner",
+      "main": "index.html",
+      "node-remote": "<local>"
+    }
+    
+You can overwrite and add to these defaults by creating a custom configuration in `karma.conf.js`. For example, to run your tests in kiosk mode
+
+    browsers: ['NodeWebkitKiosk'],
+
+    customLaunchers: {
+      'NodeWebkitKiosk': {
+        base: 'NodeWebkit',
+        options: {
+          window: {
+            'kiosk': true
+          }
+        }
+      }
+    }
+
+The `options` in the above example are merged with the defaults, so the resulting `package.json` used in node-webkit is
+
+    {
+      "name": "karma-runner",
+      "main": "index.html",
+      "node-remote": "<local>",
+      "window": {
+        "kiosk": true
+      }
+    }
+
+
 
