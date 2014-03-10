@@ -1,7 +1,5 @@
 {
   "name": "karma-runner",
   "main": "index.html",
-  "window": {
-  },
   "node-remote": "<local>"
 }
