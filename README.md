@@ -39,6 +39,12 @@ You can do it on the command line by:
 You can pass list of browsers as a CLI argument too:
 
     karma start --browsers NodeWebkit
+
+## Locally-installed Node modules
+
+If you're using locally-installed Node modules via `require` in your code, in order for the testing environment to find them, you'll have to explicitly set `NODE_PATH` to the path to the local `node_modules` directory in your project.
+
+    export NODE_PATH=/full/path/to/node_modules
     
 ## Custom node-webkit manifest
 
