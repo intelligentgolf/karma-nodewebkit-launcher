@@ -42,9 +42,23 @@ You can pass list of browsers as a CLI argument too:
 
 ## Locally-installed Node modules
 
-If you're using locally-installed Node modules via `require` in your code, in order for the testing environment to find them, you'll have to explicitly set `NODE_PATH` to the path to the local `node_modules` directory in your project.
+If you're using locally-installed Node modules via `require` in your code in the `node_modules` directory, you should be able to just `require` them, and they should be found by the testing environment. If they are in another location, in order for the testing environment to find them, you have 2 options.
 
-    export NODE_PATH=/full/path/to/node_modules
+You can explicitly set `NODE_PATH` in the environment to the directory containing the modules.
+
+    export NODE_PATH=/full/path/to/custom_node_modules
+
+Alternatively, you can create a custom configuration in `karma.conf.js`:
+
+    browsers: ['NodeWebkitWithCustomPath],
+
+    customLaunchers: {
+      'NodeWebkitWithCustomPath': {
+        base: 'NodeWebkit',
+        // Remember to include 'node_modules' if you have some modules there
+        paths: ['relative/path/to/custom_node_modules', 'node_modules']
+      }
+    } 
     
 ## Custom node-webkit manifest
 

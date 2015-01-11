@@ -8,6 +8,10 @@ var NodeWebkitBrowser = function(baseBrowserDecorator, args) {
   baseBrowserDecorator(this);
 
   var customOptions = args.options || {};
+  var searchPaths = (args.paths || ['node_modules']).map(function(searchPath) {
+    return path.join(process.cwd(), searchPath);
+  });
+  searchPaths.unshift(process.env.NODE_PATH);
 
   this._start = function(url) {
     var self = this;
@@ -36,6 +40,7 @@ var NodeWebkitBrowser = function(baseBrowserDecorator, args) {
         fs.writeFile(STATIC_PATH + PACKAGE_JSON, JSON.stringify(options), callback);
       }],
       'exec': ['index.html:write', 'package.json:write', function(callback) {
+        process.env.NODE_PATH = searchPaths.join(path.delimiter);
         self._execCommand(self._getCommand(), [STATIC_PATH]);
       }]
     });
