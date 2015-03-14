@@ -23,7 +23,7 @@
     "ncp": "~0.5.0",
     "async": "~0.2.10",
     "merge": "~1.1.2",
-    "nodewebkit": "^0.8.5"
+    "nw": "michalc/npm-installer#file-url"
   },
   "peerDependencies": {
     "karma": ">=0.9"
