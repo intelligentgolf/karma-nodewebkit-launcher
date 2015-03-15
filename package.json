@@ -1,6 +1,6 @@
 {
   "name": "karma-nodewebkit-launcher",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "A Karma plugin. Launcher for node-webkit.",
   "main": "index.js",
   "scripts": {
