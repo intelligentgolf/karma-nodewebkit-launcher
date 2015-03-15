@@ -3,6 +3,7 @@ var path = require('path');
 var ncp = require('ncp').ncp;
 var async = require('async');
 var merge = require('merge');
+var findpath = require('nw').findpath;
 
 var NodeWebkitBrowser = function(baseBrowserDecorator, args) {
   baseBrowserDecorator(this);
@@ -51,9 +52,9 @@ NodeWebkitBrowser.prototype = {
   name: 'node-webkit',
 
   DEFAULT_CMD: {
-    linux: path.normalize(__dirname + '/../.bin/nodewebkit'),
-    darwin: path.normalize(__dirname + '/../nodewebkit/nodewebkit/node-webkit.app/Contents/MacOS/node-webkit'),
-    win32: path.normalize(__dirname + '/../nodewebkit/nodewebkit/nw.exe')
+    linux: findpath(),
+    darwin: findpath(),
+    win32: findpath()
   },
 
   ENV_CMD: 'NODEWEBKIT_BIN'
