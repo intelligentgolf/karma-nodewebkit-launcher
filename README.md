@@ -62,7 +62,7 @@ Alternatively, you can create a custom configuration in `karma.conf.js`:
     
 ## Avoid download of NodeWebkit binary on every build
 
-The launcher depends on [`npm-installer`](https://github.com/nwjs/npm-installer) to download the NodeWebkit binary for your platform and achitecture. The default behaviour of this is to download on every `npm install`, which can take time. To avoid this, you can set the `nwjs_urlbase` option of [`npm-installer`](https://github.com/nwjs/npm-installer) to retrieve the binary from either a `http://` or `file://` URL.
+The launcher depends on [`npm-installer`](https://github.com/nwjs/npm-installer) to download the NodeWebkit binary for your platform and achitecture. The default behaviour of this is to download on every `npm install`, which can take time. To avoid this you can download the file ahead of time, save it to a location accessibly by `http://` or `file://` URL, and set the `nwjs_urlbase` option of [`npm-installer`](https://github.com/nwjs/npm-installer) to retrieve the binary from this location.
 
 You can do this on the command line
 
