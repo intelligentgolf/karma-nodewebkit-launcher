@@ -60,6 +60,22 @@ Alternatively, you can create a custom configuration in `karma.conf.js`:
       }
     } 
     
+## Avoid download of NodeWebkit binary on every build
+
+The launcher depends on [`npm-installer`](https://github.com/nwjs/npm-installer) to download the NodeWebkit binary for your platform and achitecture. The default behaviour of this is to download on every `npm install`, which can take time. To avoid this you can download the file ahead of time, save it to a location accessibly by `http://` or `file://` URL, and set the `nwjs_urlbase` option of [`npm-installer`](https://github.com/nwjs/npm-installer) to retrieve the binary from this location.
+
+You can do this on the command line
+
+    npm install --nwjs_urlbase=file:///home/bilbo/my/own/mirror
+
+via a line in a `.npmrc` file
+
+    nwjs_urlbase=file:///home/bilbo/my/own/mirror
+
+or by the environment variable `NWJS_URLBASE`
+
+    export NWJS_URLBASE=file:///home/bilbo/my/own/mirror
+
 ## Custom node-webkit manifest
 
 The default node-webkit [`package.json`](https://github.com/rogerwang/node-webkit/wiki/Manifest-format) that is used in the launcher is
