@@ -1,5 +1,5 @@
 {
   "name": "karma-runner",
   "main": "index.html",
-  "node-remote": "<local>"
+  "node-remote": "http://localhost"
 }
